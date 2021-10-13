@@ -85,10 +85,10 @@ const chinatown = [
     
     const indexButton_Testin = document.getElementById('complete_testin');
     indexButton_Testin.onclick = function(){
-        i = landmarkIndex;
+        var i = landmarkIndex;
         landmarkIndex = localStorage.getItem('landmarkIndex');
         landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-      
+        console.log(landmarkIndex);
         if (landmarkIndex == chinatown.length-1){
           window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/congrats.html";
         }
@@ -115,10 +115,10 @@ const chinatown = [
        }
       }
   
-      const congratButton = document.getElementById('congrats_button');
-      congratButton.onclick = function(){
-        window.location = "https://rayrixo.github.io/Fyp_testingAR/main.html";
-      }
+      // const congratButton = document.getElementById('congrats_button');
+      // congratButton.onclick = function(){
+      //   window.location = "https://rayrixo.github.io/Fyp_testingAR/main.html";
+      // }
     
     //   const indexButton_Sri = document.getElementById('completeButton');
     // indexButton_Sri.onclick = function(){
