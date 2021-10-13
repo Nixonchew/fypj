@@ -39,7 +39,15 @@ button {
 
 span {
   margin-right: 1em;
+  font-size:2em;
+  opacity: 1;
 }
+p{
+  font-size:0.5em;
+  opacity: 1;
+}
+
+
 
 div.debug {
   position: fixed;
@@ -72,7 +80,7 @@ div.debug {
 #place-label {
   position: absolute;
   top: 5%;
-  left: 0%;
+  left: 5.5%;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -81,9 +89,8 @@ div.debug {
 #place-label > span {
   z-index: 99999;
   padding: 0.25em;
-  color: black;
+  color: white;
   text-align: center;
-  background-color: white;
-  font-size: 1.5em;
+  background-color: black;
   border-radius: 10px;
 }
