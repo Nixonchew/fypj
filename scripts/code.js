@@ -72,10 +72,11 @@ const chinatown = [
   ];
   
   window.onload = () => {
-  
+    var landmarkIndex
     var localStorage= window.localStorage 
     if (localStorage.getItem('landmarkIndex')){ 
         var landmarkIndex=localStorage.getItem('landmarkIndex'); 
+
     } else{ 
         var landmarkIndex = localStorage.setItem('landmarkIndex',0); 
     }
@@ -85,10 +86,7 @@ const chinatown = [
     
     const indexButton_Testin = document.getElementById('complete_testin');
     indexButton_Testin.onclick = function(){
-        var i = landmarkIndex;
-        landmarkIndex = localStorage.getItem('landmarkIndex');
-        landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-        console.log(landmarkIndex);
+        landmarkIndex = localStorage.setItem('landmarkIndex',++landmarkIndex);
         if (landmarkIndex == chinatown.length-1){
           window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/congrats.html";
         }
