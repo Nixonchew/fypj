@@ -17,7 +17,7 @@ const chinatown = [
  
         },
         content:"Get transported back in time and experience the footsteps \n of migrants in the late 19th century of singapore",
-        src:'https://nixonchew.github.io/Wtv/landmarks/chineseheritagecenter.html' 
+        src:'https://nixonchew.github.io/fypj/landmarks/chineseheritagecenter.html' 
     }, 
  
     { 
@@ -27,7 +27,7 @@ const chinatown = [
             lng:103.845227, 
         },
         content:'This hindu temple is the oldest \n and largest of its kind in singapore',
-        src:'https://nixonchew.github.io/Wtv/landmarks/SriMariamman.html'   
+        src:'https://nixonchew.github.io/fypj/landmarks/SriMariamman.html'   
     }, 
  
     { 
@@ -37,7 +37,7 @@ const chinatown = [
             lng:103.845329, 
         },
         content:'Established in 1826 it is one of the oldest mosque in \n singapore One of the only six in the \n country that conducts sermons in tamil',
-        src:'https://nixonchew.github.io/Wtv/landmarks/MasjidJamae.html'  
+        src:'https://nixonchew.github.io/fypj/landmarks/MasjidJamae.html'  
     }, 
  
     { 
@@ -47,7 +47,7 @@ const chinatown = [
             lng:103.84583411762635, 
         }, 
         content:'Witness murals that depict the past \n through the eyes of singaporean artist Yip Yew Chong.',
-        src:'https://nixonchew.github.io/Wtv/landmarks/MuralStreet.html' 
+        src:'https://nixonchew.github.io/fypj/landmarks/MuralStreet.html' 
     }, 
  
     { 
@@ -57,7 +57,7 @@ const chinatown = [
             lng:103.844937, 
         },
         content:'Tong Heng is the oldest confectioneries. \n Witness a story of resilience, \n determination and resourcefulness.',
-        src:'https://nixonchew.github.io/Wtv/landmarks/TongHeng.html' 
+        src:'https://nixonchew.github.io/fypj/landmarks/TongHeng.html' 
     }, 
  
     { 
@@ -67,7 +67,7 @@ const chinatown = [
             lng:103.844192, 
         },
         content:'This place hold special meaning for buddhist people as it stores the left canine tooth of buddha',
-        src:'https://nixonchew.github.io/Wtv/landmarks/BuddhaToothRelic.html' 
+        src:'https://nixonchew.github.io/fypj/landmarks/BuddhaToothRelic.html' 
     }, 
  
     { 
@@ -77,7 +77,7 @@ const chinatown = [
             lng:103.844450, 
         },
         content:'This place hold special meaning for buddhist people as it stores the left canine tooth of buddha',
-        src:'https://nixonchew.github.io/Wtv/landmarks/PagodaStreet.html'
+        src:'https://nixonchew.github.io/fypj/landmarks/PagodaStreet.html'
     },
 
     { 
@@ -87,7 +87,7 @@ const chinatown = [
             lng:103.844203, 
         },
         content:'Experience the street of the dead where immigrants of the past with no family lived and died',
-        src:'https://nixonchew.github.io/Wtv/landmarks/SagoStreet.html' 
+        src:'https://nixonchew.github.io/fypj/landmarks/SagoStreet.html' 
     }, 
 ];
 
@@ -108,7 +108,7 @@ const loadPlaces = function() {
      
             },
             content:"Get transported back in time and experience the footsteps \n of migrants in the late 19th century of singapore",
-            src:'https://nixonchew.github.io/Wtv/landmarks/chineseheritagecenter.html' 
+            src:'https://nixonchew.github.io/fypj/landmarks/chineseheritagecenter.html' 
         }, 
      
         { 
@@ -118,7 +118,7 @@ const loadPlaces = function() {
                 lng:103.845227, 
             },
             content:'This hindu temple is the oldest \n and largest of its kind in singapore',
-            src:'https://nixonchew.github.io/Wtv/landmarks/SriMariamman.html'   
+            src:'https://nixonchew.github.io/fypj/landmarks/SriMariamman.html'   
         }, 
      
         { 
@@ -128,7 +128,7 @@ const loadPlaces = function() {
                 lng:103.845329, 
             },
             content:'Established in 1826 it is one of the oldest mosque in \n singapore One of the only six in the \n country that conducts sermons in tamil',
-            src:'https://nixonchew.github.io/Wtv/landmarks/MasjidJamae.html'  
+            src:'https://nixonchew.github.io/fypj/landmarks/MasjidJamae.html'  
         }, 
      
         { 
@@ -138,7 +138,7 @@ const loadPlaces = function() {
                 lng:103.84583411762635, 
             }, 
             content:'Witness murals that depict the past \n through the eyes of singaporean artist Yip Yew Chong.',
-            src:'https://nixonchew.github.io/Wtv/landmarks/MuralStreet.html' 
+            src:'https://nixonchew.github.io/fypj/landmarks/MuralStreet.html' 
         }, 
      
         { 
@@ -148,7 +148,7 @@ const loadPlaces = function() {
                 lng:103.844937, 
             },
             content:'Tong Heng is the oldest confectioneries. \n Witness a story of resilience, \n determination and resourcefulness.',
-            src:'https://nixonchew.github.io/Wtv/landmarks/TongHeng.html' 
+            src:'https://nixonchew.github.io/fypj/landmarks/TongHeng.html' 
         }, 
      
         { 
@@ -158,7 +158,7 @@ const loadPlaces = function() {
                 lng:103.844192, 
             },
             content:'This place hold special meaning for buddhist people as it stores the left canine tooth of buddha',
-            src:'https://nixonchew.github.io/Wtv/landmarks/BuddhaToothRelic.html' 
+            src:'https://nixonchew.github.io/fypj/landmarks/BuddhaToothRelic.html' 
         }, 
      
         { 
@@ -168,7 +168,7 @@ const loadPlaces = function() {
                 lng:103.844450, 
             },
             content:'This place hold special meaning for buddhist people as it stores the left canine tooth of buddha',
-            src:'https://nixonchew.github.io/Wtv/landmarks/PagodaStreet.html'
+            src:'https://nixonchew.github.io/fypj/landmarks/PagodaStreet.html'
         },
 
         { 
@@ -178,7 +178,7 @@ const loadPlaces = function() {
                 lng:103.844203, 
             },
             content:'Experience the street of the dead where immigrants of the past with no family lived and died',
-            src:'https://nixonchew.github.io/Wtv/landmarks/SagoStreet.html' 
+            src:'https://nixonchew.github.io/fypj/landmarks/SagoStreet.html' 
         }, 
     ];
 
