@@ -74,9 +74,6 @@ const chinatown = [
   window.onload = () => {
     var landmarkIndex
     var localStorage= window.localStorage 
-    console.log(localStorage)
-        
-    
   
     const congratButton = document.getElementById('congrats_button');
     if (congratButton){
@@ -91,11 +88,10 @@ const chinatown = [
         
     
         } else{ 
-            var landmarkIndex = localStorage.setItem('landmarkIndex',0); 
+            var landmarkIndex = 0
         }
         landmarkIndex +=1
         localStorage.setItem('landmarkIndex',landmarkIndex);
-        console.log(landmarkIndex)
         if (landmarkIndex == chinatown.length-1){
           window.location = "https://nixonchew.github.io/fypj/congratsPages/congrats.html";
         }
