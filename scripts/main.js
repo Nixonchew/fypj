@@ -426,6 +426,23 @@ function myFunction() {
     } else{
         const directionsService = new google.maps.DirectionsService();
         const directionRenderer = new google.maps.DirectionsRenderer({preserveViewport:true});
+        if (landmarkIndex >= 1){
+            directionsService.route({
+                origin : {lat:origin_lat, lng:origin_lng},
+                destination : chinatown[landmarkIndex].location,   
+                travelMode: google.maps.TravelMode["WALKING"]
+            }) .then((response)=>{
+                directionRenderer.setDirections(response);
+                const route = response.routes[0];
+                var leg = route.legs[0]
+                instructions = leg["steps"][0].instructions 
+                metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                document.getElementById("instructions").innerHTML = instructions
+                document.getElementById("metainfo").innerHTML = metainfo
+                gMarker = makeStartMarker(leg.start_location, leg.end_location)
+                gMarkers.push(gMarker)
+            })
+        }   
         if(!completeButtonFlag){
             completeButtonFlag = true
             
@@ -446,6 +463,8 @@ function myFunction() {
                     metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
                     document.getElementById("instructions").innerHTML = instructions
                     document.getElementById("metainfo").innerHTML = metainfo
+                    gMarker = makeStartMarker(leg.start_location, leg.end_location)
+                    gMarkers.push(gMarker)
                 })  
                   
             })
