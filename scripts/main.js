@@ -427,6 +427,7 @@ function myFunction() {
         const directionsService = new google.maps.DirectionsService();
         const directionRenderer = new google.maps.DirectionsRenderer({preserveViewport:true});
         if (landmarkIndex >= 1){
+            removeMarkers()
             directionsService.route({
                 origin : {lat:origin_lat, lng:origin_lng},
                 destination : chinatown[landmarkIndex].location,   
