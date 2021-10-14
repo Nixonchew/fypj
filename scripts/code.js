@@ -74,42 +74,46 @@ const chinatown = [
   window.onload = () => {
     var landmarkIndex
     var localStorage= window.localStorage 
-    if (localStorage.getItem('landmarkIndex')){ 
-        var landmarkIndex=localStorage.getItem('landmarkIndex'); 
-
-    } else{ 
-        var landmarkIndex = localStorage.setItem('landmarkIndex',0); 
+    console.log(localStorage)
+        
+    
+  
+    const congratButton = document.getElementById('congrats_button');
+    congratButton.onclick = function(){
+        window.location = "https://nixonchew.github.io/fypj/main.html";
     }
-  
-  
   
     
     const indexButton_Testin = document.getElementById('complete_testin');
     indexButton_Testin.onclick = function(){
-        landmarkIndex = localStorage.setItem('landmarkIndex',++landmarkIndex);
+        if (localStorage.getItem('landmarkIndex')){ 
+            var landmarkIndex=parseInt(localStorage.getItem('landmarkIndex')); 
+        
+    
+        } else{ 
+            var landmarkIndex = localStorage.setItem('landmarkIndex',0); 
+        }
+        landmarkIndex +=1
+        localStorage.setItem('landmarkIndex',landmarkIndex);
+        console.log(landmarkIndex)
         if (landmarkIndex == chinatown.length-1){
           window.location = "https://nixonchew.github.io/fypj/congratsPages/congrats.html";
         }
-  
-       switch (landmarkIndex){
-          case 1:
-            window.location = "https://nixonchew.github.io/fypj/congratsPages/srimarimman.html";
-       
-          case 2:
+
+        if (landmarkIndex == 1){
+           window.location = "https://nixonchew.github.io/fypj/congratsPages/srimarimman.html";
+        }  else if (landmarkIndex ==2 ){
             window.location = "https://nixonchew.github.io/fypj/congratsPages/masjidjamae.html";
-        
-          case 3:
+        } else if (landmarkIndex ==3 ){
             window.location = "https://nixonchew.github.io/fypj/congratsPages/muralatmohamedali.html";
-  
-          case 4:
+        } else if (landmarkIndex ==4 ){
             window.location = "https://nixonchew.github.io/fypj/congratsPages/tongheng.html";
-  
-          case 5:
+        } else if (landmarkIndex ==5 ){
             window.location = "https://nixonchew.github.io/fypj/congratsPages/buddhatoothrelic.html";
-  
-          case 6:
-            window.location = "https://nixonchew.github.io/fypj/congratsPages/sagstreet.html";
-  
-       }
-      }
-    }
+        }  else if (landmarkIndex ==6 ){
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/sagostreet.html";
+        }
+    } 
+ 
+      
+}

@@ -442,8 +442,10 @@ function myFunction() {
                     directionRenderer.setDirections(response);
                     const route = response.routes[0];
                     var leg = route.legs[0]
-                    instructions = leg["steps"][0].instructions + " "+ leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                    instructions = leg["steps"][0].instructions 
+                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
                     document.getElementById("instructions").innerHTML = instructions
+                    document.getElementById("metainfo").innerHTML = metainfo
                 })  
                   
             })
@@ -465,8 +467,10 @@ function myFunction() {
                     directionRenderer.setDirections(response);
                     const route = response.routes[0];
                     var leg = route.legs[0]
-                    instructions = leg["steps"][0].instructions + " "+ leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                    instructions = leg["steps"][0].instructions 
+                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
                     document.getElementById("instructions").innerHTML = instructions
+                    document.getElementById("metainfo").innerHTML = metainfo
                     gMarker = makeStartMarker(leg.start_location, leg.end_location)
                     gMarkers.push(gMarker)
                 })
@@ -485,8 +489,10 @@ function myFunction() {
                         directionRenderer.setDirections(response);
                         const route = response.routes[0];
                         var leg = route.legs[0]
-                        instructions = leg["steps"][0].instructions + " "+ leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                        instructions = leg["steps"][0].instructions 
+                        metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
                         document.getElementById("instructions").innerHTML = instructions
+                        document.getElementById("metainfo").innerHTML = metainfo
                         gMarker = makeStartMarker(leg.start_location, leg.end_location)
                         gMarkers.push(gMarker)
                     })
@@ -509,8 +515,10 @@ function myFunction() {
                     directionRenderer.setDirections(response);
                     const route = response.routes[0];
                     var leg = route.legs[0]
-                    instructions = leg["steps"][0].instructions + " "+ leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                    instructions = leg["steps"][0].instructions 
+                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
                     document.getElementById("instructions").innerHTML = instructions
+                    document.getElementById("metainfo").innerHTML = metainfo
                     paths = response.routes[0].legs
                     gMarker = makeStartMarker(leg.start_location, leg.end_location)
                     gMarkers.push(gMarker)
@@ -531,8 +539,10 @@ function myFunction() {
                         const route = response.routes[0];
                         var leg = route.legs[0]
                         // TO-DO  Direction Instructions
-                        instructions = leg["steps"][0].instructions + " "+ leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
-                        document.getElementById("instructions").innerHTML = instructions
+                        instructions = leg["steps"][0].instructions 
+                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                    document.getElementById("instructions").innerHTML = instructions
+                    document.getElementById("metainfo").innerHTML = metainfo
                         paths = response.routes[0].legs
                         gMarker = makeStartMarker(leg.start_location, leg.end_location)
                         gMarkers.push(gMarker)

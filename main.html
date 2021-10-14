@@ -24,8 +24,8 @@
     </script>
     <style>
         #map {
-          height: 70%;
-          width: 80%;
+          height: 60%;
+          width: 100%;
         }
         html, body {
           height: 100%;
@@ -34,12 +34,9 @@
           overflow-x: hidden;
         }
         #camera{
-          height: 60%
+          height: 50%
         }
-        #submit{
-          position: absolute;
-
-        }
+        
       </style>
 </head>
 
@@ -49,7 +46,7 @@
 <script async src="./scripts/main.js"></script>
 
 <body>
-
+  
 <a-scene
 id = "camera"
 cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
@@ -60,9 +57,21 @@ arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280
 <a-camera gps-camera rotation-reader>
 </a-camera>
 </a-scene>
-<input type="button" id="submit" value="Get your route" /> 
-<button id ="recenter">RECENTER</button>
-<span id ="instructions"></span>
+
+<div>
+  
+  <span id ="instructions" style="margin-left:385px;font-size:15px;text-align: center;"></span>
+  
+  <div >
+    <div>
+      <span id= "metainfo" style="font-size: small;margin-left: 468px;text-align: center; font-size: 14px;"></span>
+    </div>
+   
+  <input type="button" id="submit" value="Start" style="margin-left: 660px;" /> 
+  <button id ="recenter" style="margin-left: 653px;" >Recenter</button>
+</div>
+</div>
+
 <div id="map"></div>
 
 
