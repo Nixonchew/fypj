@@ -79,11 +79,11 @@ const chinatown = [
     
   
     const congratButton = document.getElementById('congrats_button');
-    congratButton.onclick = function(){
-        window.location = "https://nixonchew.github.io/fypj/main.html";
+    if (congratButton){
+        congratButton.onclick = function(){
+            window.location = "https://nixonchew.github.io/fypj/main.html";
+        }
     }
-  
-    
     const indexButton_Testin = document.getElementById('complete_testin');
     indexButton_Testin.onclick = function(){
         if (localStorage.getItem('landmarkIndex')){ 
