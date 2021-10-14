@@ -93,9 +93,10 @@ const chinatown = [
 
 var localStorage= window.localStorage 
 if (localStorage.getItem('landmarkIndex')){ 
-    var landmarkIndex=localStorage.getItem('landmarkIndex'); 
+    var landmarkIndex=parseInt(localStorage.getItem('landmarkIndex')); 
 } else{ 
-    var landmarkIndex = localStorage.setItem('landmarkIndex',0); 
+    localStorage.setItem('landmarkIndex',0); 
+    var landmarkIndex = 0
 }
 
 const loadPlaces = function() {
@@ -426,6 +427,7 @@ function myFunction() {
     } else{
         const directionsService = new google.maps.DirectionsService();
         const directionRenderer = new google.maps.DirectionsRenderer({preserveViewport:true});
+        directionRenderer.setMap(map);
         if (landmarkIndex >= 1){
             removeMarkers()
             directionsService.route({
@@ -443,64 +445,42 @@ function myFunction() {
                 gMarker = makeStartMarker(leg.start_location, leg.end_location)
                 gMarkers.push(gMarker)
             })
-        }   
-        if(!completeButtonFlag){
-            completeButtonFlag = true
-            
-             // --TO DO --  Display route on click
-            document.getElementById("complete").addEventListener("click", () => {
-                directionRenderer.set('directions', null)
-                removeMarkers()
+        }   else{
+            if(!completeButtonFlag){
+                completeButtonFlag = true
                 
-                directionsService.route({
-                    origin : {lat:origin_lat, lng:origin_lng},
-                    destination : chinatown[landmarkIndex].location,   
-                    travelMode: google.maps.TravelMode["WALKING"]
-                }) .then((response)=>{
-                    directionRenderer.setDirections(response);
-                    const route = response.routes[0];
-                    var leg = route.legs[0]
-                    instructions = leg["steps"][0].instructions 
-                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
-                    document.getElementById("instructions").innerHTML = instructions
-                    document.getElementById("metainfo").innerHTML = metainfo
-                    gMarker = makeStartMarker(leg.start_location, leg.end_location)
-                    gMarkers.push(gMarker)
-                })  
-                  
-            })
-        }
-
-        directionRenderer.setMap(map);
-        distance = getDistance(origin)
-        // If not at trail yet
-        if (distance<700){
-            console.log(travelMode)
-            if (flag){
-                directionRenderer.setMap(null); 
-                removeMarkers()
-                directionsService.route({
-                    origin : {lat:origin_lat, lng:origin_lng},
-                    destination : chinatown[0].location,   
-                    travelMode: google.maps.TravelMode[travelMode]
-                }) .then((response)=>{
-                    directionRenderer.setDirections(response);
-                    const route = response.routes[0];
-                    var leg = route.legs[0]
-                    instructions = leg["steps"][0].instructions 
-                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
-                    document.getElementById("instructions").innerHTML = instructions
-                    document.getElementById("metainfo").innerHTML = metainfo
-                    gMarker = makeStartMarker(leg.start_location, leg.end_location)
-                    gMarkers.push(gMarker)
+                 // --TO DO --  Display route on click
+                document.getElementById("complete").addEventListener("click", () => {
+                    directionRenderer.set('directions', null)
+                    removeMarkers()
+                    
+                    directionsService.route({
+                        origin : {lat:origin_lat, lng:origin_lng},
+                        destination : chinatown[landmarkIndex].location,   
+                        travelMode: google.maps.TravelMode["WALKING"]
+                    }) .then((response)=>{
+                        directionRenderer.setDirections(response);
+                        const route = response.routes[0];
+                        var leg = route.legs[0]
+                        instructions = leg["steps"][0].instructions 
+                        metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                        document.getElementById("instructions").innerHTML = instructions
+                        document.getElementById("metainfo").innerHTML = metainfo
+                        gMarker = makeStartMarker(leg.start_location, leg.end_location)
+                        gMarkers.push(gMarker)
+                    })  
+                      
                 })
             }
-            document.getElementById("submit").addEventListener("click", function showDialog() {
-                flag = true
-                $('#dialog').show();
-                $('#dialog').dialog();
-                $( "#dialog" ).on('dialogclose', function() {
-                    travelMode = $('#option').val();
+    
+            
+            distance = getDistance(origin)
+            // If not at trail yet
+            if (distance<700){
+                console.log(travelMode)
+                if (flag){
+                    directionRenderer.setMap(null); 
+                    removeMarkers()
                     directionsService.route({
                         origin : {lat:origin_lat, lng:origin_lng},
                         destination : chinatown[0].location,   
@@ -516,61 +496,85 @@ function myFunction() {
                         gMarker = makeStartMarker(leg.start_location, leg.end_location)
                         gMarkers.push(gMarker)
                     })
-                })  
-            }) 
-            
-        }
-        
-        // If at the trail already
-        // TO-DO For loop go through Chinatown[i].location and get route to next landmark
-        else{
-            if (flag){
-                directionRenderer.setMap(null); 
-                removeMarkers()
-                directionsService.route({
-                    origin : {lat:origin_lat, lng:origin_lng},
-                    destination : chinatown[landmarkIndex].location,   
-                    travelMode: google.maps.TravelMode.WALKING
-                }) .then((response)=>{
-                    directionRenderer.setDirections(response);
-                    const route = response.routes[0];
-                    var leg = route.legs[0]
-                    instructions = leg["steps"][0].instructions 
-                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
-                    document.getElementById("instructions").innerHTML = instructions
-                    document.getElementById("metainfo").innerHTML = metainfo
-                    paths = response.routes[0].legs
-                    gMarker = makeStartMarker(leg.start_location, leg.end_location)
-                    gMarkers.push(gMarker)
-                })
-            } 
-
-            if (!getRouteButtonFlag){
-                // Set get route button 
-                getRouteButtonFlag = true
-                document.getElementById("submit").addEventListener("click", () => {
+                }
+                document.getElementById("submit").addEventListener("click", function showDialog() {
                     flag = true
+                    $('#dialog').show();
+                    $('#dialog').dialog();
+                    $( "#dialog" ).on('dialogclose', function() {
+                        travelMode = $('#option').val();
+                        directionsService.route({
+                            origin : {lat:origin_lat, lng:origin_lng},
+                            destination : chinatown[0].location,   
+                            travelMode: google.maps.TravelMode[travelMode]
+                        }) .then((response)=>{
+                            directionRenderer.setDirections(response);
+                            const route = response.routes[0];
+                            var leg = route.legs[0]
+                            instructions = leg["steps"][0].instructions 
+                            metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                            document.getElementById("instructions").innerHTML = instructions
+                            document.getElementById("metainfo").innerHTML = metainfo
+                            gMarker = makeStartMarker(leg.start_location, leg.end_location)
+                            gMarkers.push(gMarker)
+                        })
+                    })  
+                }) 
+                
+            }
+            
+            // If at the trail already
+            // TO-DO For loop go through Chinatown[i].location and get route to next landmark
+            else{
+                if (flag){
+                    directionRenderer.setMap(null); 
+                    removeMarkers()
                     directionsService.route({
                         origin : {lat:origin_lat, lng:origin_lng},
-                        destination : chinatown[landmarkIndex].location,
+                        destination : chinatown[landmarkIndex].location,   
                         travelMode: google.maps.TravelMode.WALKING
                     }) .then((response)=>{
                         directionRenderer.setDirections(response);
                         const route = response.routes[0];
                         var leg = route.legs[0]
-                        // TO-DO  Direction Instructions
                         instructions = leg["steps"][0].instructions 
-                    metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
-                    document.getElementById("instructions").innerHTML = instructions
-                    document.getElementById("metainfo").innerHTML = metainfo
+                        metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                        document.getElementById("instructions").innerHTML = instructions
+                        document.getElementById("metainfo").innerHTML = metainfo
                         paths = response.routes[0].legs
                         gMarker = makeStartMarker(leg.start_location, leg.end_location)
                         gMarkers.push(gMarker)
                     })
-                }); 
+                } 
+    
+                if (!getRouteButtonFlag){
+                    // Set get route button 
+                    getRouteButtonFlag = true
+                    document.getElementById("submit").addEventListener("click", () => {
+                        flag = true
+                        directionsService.route({
+                            origin : {lat:origin_lat, lng:origin_lng},
+                            destination : chinatown[landmarkIndex].location,
+                            travelMode: google.maps.TravelMode.WALKING
+                        }) .then((response)=>{
+                            directionRenderer.setDirections(response);
+                            const route = response.routes[0];
+                            var leg = route.legs[0]
+                            // TO-DO  Direction Instructions
+                            instructions = leg["steps"][0].instructions 
+                        metainfo = leg["steps"][0].distance.text + "  "+leg["steps"][0].duration.text
+                        document.getElementById("instructions").innerHTML = instructions
+                        document.getElementById("metainfo").innerHTML = metainfo
+                            paths = response.routes[0].legs
+                            gMarker = makeStartMarker(leg.start_location, leg.end_location)
+                            gMarkers.push(gMarker)
+                        })
+                    }); 
+                }
+                
             }
-            
         }
+        
         }
     }
 
