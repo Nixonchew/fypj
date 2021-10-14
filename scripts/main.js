@@ -561,7 +561,7 @@ function myFunction() {
         alert("Error: Position is unavailable!");
     }
     }
-function getLocationUpdate(){
+window.getLocationUpdate = function(){
     if (navigator.geolocation){
         geoLoc = navigator.geolocation
         var options = {
