@@ -88,124 +88,28 @@ const chinatown = [
     indexButton_Testin.onclick = function(){
         landmarkIndex = localStorage.setItem('landmarkIndex',++landmarkIndex);
         if (landmarkIndex == chinatown.length-1){
-          window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/congrats.html";
+          window.location = "https://nixonchew.github.io/fypj/congratsPages/congrats.html";
         }
   
        switch (landmarkIndex){
           case 1:
-            window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/srimarimman.html";
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/srimarimman.html";
        
           case 2:
-            window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/masjidjamae.html";
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/masjidjamae.html";
         
           case 3:
-            window.location = "https:/nixonchew.github.io/Fyp_testingAR/congratsPages/muralatmohamedali.html";
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/muralatmohamedali.html";
   
           case 4:
-            window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/tongheng.html";
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/tongheng.html";
   
           case 5:
-            window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/buddhatoothrelic.html";
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/buddhatoothrelic.html";
   
           case 6:
-            window.location = "https://nixonchew.github.io/Fyp_testingAR/congratsPages/sagstreet.html";
+            window.location = "https://nixonchew.github.io/fypj/congratsPages/sagstreet.html";
   
        }
       }
-  
-      // const congratButton = document.getElementById('congrats_button');
-      // congratButton.onclick = function(){
-      //   window.location = "https://rayrixo.github.io/Fyp_testingAR/main.html";
-      // }
-    
-    //   const indexButton_Sri = document.getElementById('completeButton');
-    // indexButton_Sri.onclick = function(){
-    //     i = landmarkIndex;
-    //     landmarkIndex = localStorage.getItem('landmarkIndex');
-    //     landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-    
-    //     console.log(i);
-    //     window.location = "https://rayrixo.github.io/Fyp_testingAR/MasjidJamae.html";
-    //   }
-    
-    
-    
-    // const indexButton = document.getElementById('completeButton');
-    // indexButton.onclick = function(){
-    // i = landmarkIndex;
-    // landmarkIndex = localStorage.getItem('landmarkIndex');
-    // landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-    
-    // console.log(i);
-    // window.location = "https://rayrixo.github.io/Fyp_testingAR/TongHeng.html";
-    // }
-    
-    
-    
-    
-    // const indexButton = document.getElementById('completeButton');
-    // indexButton.onclick = function(){
-    // i = landmarkIndex;
-    // landmarkIndex = localStorage.getItem('landmarkIndex');
-    // landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-    
-    // console.log(i);
-    // window.location = "https://rayrixo.github.io/Fyp_testingAR/BuddhaToothRelic.html";
-    // }
-    
-    
-    
-    // const indexButton = document.getElementById('completeButton');
-    // indexButton.onclick = function(){
-    //     i = landmarkIndex;
-    //     landmarkIndex = localStorage.getItem('landmarkIndex');
-    //     landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-    
-    //     console.log(i);
-    //     window.location = "https://rayrixo.github.io/Fyp_testingAR/PagodaStreet.html";
-    // }
-    
-    
-    // const indexButton = document.getElementById('completeButton');
-    // indexButton.onclick = function(){
-    //     i = landmarkIndex;
-    //     landmarkIndex = localStorage.getItem('landmarkIndex');
-    //     landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-    
-    //     console.log(i);
-    //     window.location = "https://rayrixo.github.io/Fyp_testingAR/SagoStreet.html";
-    //   }
-    
-    
-    //   const indexButton = document.getElementById('completeButton');
-    // indexButton.onclick = function(){
-    //     i = landmarkIndex;
-    //     landmarkIndex = localStorage.getItem('landmarkIndex');
-    //     landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-    
-    //     console.log(i);
-    //     window.location = "https://rayrixo.github.io/Fyp_testingAR/SagoStreet.html";
-    //   }
-    
-    
-    //   const indexButton = document.getElementById('completeButton');
-    //   indexButton.onclick = function(){
-    //       i = landmarkIndex;
-    //       landmarkIndex = localStorage.getItem('landmarkIndex');
-    //       landmarkIndex = localStorage.setItem('landmarkIndex',++i);
-      
-    //       console.log(i);
-    //       window.location = "https://rayrixo.github.io/Fyp_testingAR/MuralStreet.html";
-    //     }
-      
-      
-    
-    
-    
-    
-    // if(indexButton.clicked == true){
-    //         localStorage.setItem('landmarkIndex',++i);
-    // }
-    
-    
     }

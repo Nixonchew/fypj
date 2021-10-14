@@ -431,8 +431,6 @@ function myFunction() {
             
              // --TO DO --  Display route on click
             document.getElementById("complete").addEventListener("click", () => {
-                console.log("Compelte button pressed")
-                landmarkIndex += 1 
                 directionRenderer.set('directions', null)
                 removeMarkers()
                 
@@ -441,7 +439,6 @@ function myFunction() {
                     destination : chinatown[landmarkIndex].location,   
                     travelMode: google.maps.TravelMode["WALKING"]
                 }) .then((response)=>{
-                    console.log(response)
                     directionRenderer.setDirections(response);
                     const route = response.routes[0];
                     var leg = route.legs[0]
@@ -577,7 +574,6 @@ function currentPositionSuccess(position){
     window.map = new google.maps.Map(document.getElementById("map"), {
         zoom: 18,
         center: { lat: origin_lat, lng: origin_lng },
-        zoomControl: false,
     });
 }
 function currentPositionError(err){
