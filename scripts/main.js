@@ -309,7 +309,7 @@ window.onload = () => {
                             const para = document.createElement('p');
                             const butt = document.createElement('a');
                             
-                            butt.setAttribute('class','btn btn-primary');
+                            butt.setAttribute('class','btn btn-dark');
                             butt.setAttribute('href',src);                            
                             container.setAttribute('id', 'place-label');
                             label.innerText = name;
