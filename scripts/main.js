@@ -103,8 +103,8 @@ const loadPlaces = function() {
         { 
             name: "Chinese Heritage Center", 
             location: { 
-                lat: 1.445757, // add here latitude if using static data 
-                lng: 103.795065, // add here longitude if using static data 
+                lat: 1.377398324673459,  // add here latitude if using static data 
+                lng: 103.90424293700869, // add here longitude if using static data 
      
             },
             content:"Get transported back in time and experience the footsteps \n of migrants in the late 19th century of singapore",
@@ -114,8 +114,8 @@ const loadPlaces = function() {
         { 
             name: "Sri Maraimman Temple", 
             location:{ 
-                lat:1.282644, 
-                lng:103.845227, 
+                lat:1.3779936029590414, 
+                lng:103.90418929283814, 
             },
             content:'This hindu temple is the oldest \n and largest of its kind in singapore',
             src:'https://nixonchew.github.io/fypj/landmarks/SriMariamman.html'   
